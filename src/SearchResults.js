@@ -1,19 +1,15 @@
 import React from "react";
-import SearchBar from "./SearchBar";
+import Track from "./Track";
 
 //take input from SearchBar and use it to return Tracklists
 
-function SearchResults() {
-    return( //this should be an object?
-        <>
-            <div>
+const SearchResults = () => {
+    return (
+        <div className="searchresults">
                 <h3>Search Results: </h3>
-                <p>Artist: </p>
-                <p>Song Title: </p>
-                <p>Album: </p>
-            </div>
-        </>
-    )
+                <Track />
+        </div>
+      );
 }
-
+ 
 export default SearchResults;

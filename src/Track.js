@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 //track return here get imported to Tracklist
 
-function Track() {
-    return( //imported from API?
-        <>
-            <div>
-                <h4>Track Name</h4>
-                <p>and details</p>
-            </div>
-        </>
-    )
-}
+const Track = () => {
+    const tracks = ['artist: Bon Jovi', 'songTitle: Living on a Prayer', 'album: Slippery When Wet']
 
+          /*artist: 'Bryan Adams',
+          songTitle: 'Run to You',
+          album: 'Reckless'*/
+    
+    return ( 
+        <div className="tracks">{tracks}</div>
+     );
+}
+ 
 export default Track;
