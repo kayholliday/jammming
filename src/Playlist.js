@@ -1,6 +1,8 @@
 import React from "react";
 import Tracklist from "./Tracklist";
 
+//this should hold the selected tracks imported from SearchResult
+
 //import the selected tracks from SearchResults
 //save them to a named playlist
 

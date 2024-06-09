@@ -1,20 +1,22 @@
-import React /*{useState}*/ from "react";
+import React, {useState} from "react";
 import SearchResults from "./SearchResults";
 
 //export stored input data to ? to get the results
 
 const SearchBar = () => {
-    const handleClick = () => {
-        alert('hello, world');
-    };
+    const [searchResults, setSearchResults] = useState(null);
+    
+    //When the button is clicked the SearchResults component will show
     return ( 
       <>  
         <form className="searchbar">
-            <button type="click" onClick={handleClick}>Search</button>
+            <button type="button" onClick={()=> setSearchResults('search results')}>Search</button>
             <input /*id='search' name='search' type='text' value={search} onChange={handleChange}*/></input>
         </form>
         <div className="searchresults">
-            <SearchResults />
+            {searchResults === "search results" &&
+                <SearchResults />
+            }
         </div>
       </>
     );

@@ -4,16 +4,15 @@ import Track from "./Track";
 //Take Track data and create array of objects to create Tracklist based on artist or title or album
 //export list to SearchResults
 
-function Tracklist() {
-    return(//object?
-        <>
-            <div>
-                <h3>Tracklist</h3>
-                <p>songs</p>
-                <p>artists</p>
-            </div>
-        </>
-    )
+const TrackList = (props) => {
+    return ( 
+        <div className="tracklist">
+            <ul className="tracks">
+                <li><Track /></li>
+                <li><Track /></li>
+            </ul>
+        </div>
+     );
 }
-
-export default Tracklist;
+ 
+export default TrackList;

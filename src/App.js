@@ -49,7 +49,6 @@ function App() {
     
     
     <Playlist />
-    <Tracklist />
     <div>
       <button id='save' onClick={handleSave}>Save to Spotify</button>
     </div>
