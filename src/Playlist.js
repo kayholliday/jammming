@@ -1,17 +1,19 @@
 import React from "react";
-import Tracklist from "./Tracklist";
 
-//this should hold the selected tracks imported from SearchResult
+//child component of Tracklist
 
-//import the selected tracks from SearchResults
-//save them to a named playlist
-
-function Playlist() {
-    return (//another object?
+function Playlist({tracks, setTracks, updateStatus}) {
+    return (
         <>
-            <div>
-                <h3>Playlist Name</h3>
-                <p>list of tracks</p>
+            <div className="playlist">
+                <h3>Playlist</h3>
+                {
+                    tracks && tracks.map(track => {
+                        if(track && track.status==='Playlist')
+                        return<>
+                            <p className="track" key={track.id}>{track.artist} {track.songTitle} {track.album}<button className="removeFromPlaylist" key={track.id} onClick={()=>{updateStatus(track.id, 'SearchResult')}}>Remove from Playlist</button></p></>
+          })
+        }
             </div>
         </>
     )

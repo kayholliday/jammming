@@ -4,6 +4,13 @@ import SearchResults from "./SearchResults";
 //track return here get imported to Tracklist
 //need to get the addTrack functionimported fro SearchBar
 
+let nextId = 0;
+export function generateId () {
+    const result = nextId;
+    nextId +=1;
+    return result;
+};
+
 const Track = (props) => {
     const {track, addTrack} = props;
     const tracks = ['artist: Bon Jovi ', 'songTitle: Living on a Prayer ', 'album: Slippery When Wet ']

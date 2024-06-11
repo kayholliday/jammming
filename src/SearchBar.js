@@ -1,21 +1,21 @@
 import React, {useState} from "react";
-import SearchResults from "./SearchResults";
+import Tracklist from "./Tracklist";
 
 //export stored input data to ? to get the results
 
 const SearchBar = () => {
-    const [searchResults, setSearchResults] = useState(null);
+    const [tracklist, setTracklist] = useState(null);
     
-    //When the button is clicked the SearchResults component will show
+    //When the button is clicked the Tracklist component will show
     return ( 
       <>  
         <form className="searchbar">
-            <button type="button" onClick={()=> setSearchResults('search results')}>Search</button>
+            <button type="button" onClick={()=> setTracklist('tracklist')}>Search</button>
             <input /*id='search' name='search' type='text' value={search} onChange={handleChange}*/></input>
         </form>
-        <div className="searchresults">
-            {searchResults === "search results" &&
-                <SearchResults />
+        <div className="tracklist">
+            {tracklist === "tracklist" &&
+                <Tracklist />
             }
         </div>
       </>
