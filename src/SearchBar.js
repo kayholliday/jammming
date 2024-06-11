@@ -1,7 +1,5 @@
 import React, {useState} from "react";
-import Tracklist from "./Tracklist";
-
-//export stored input data to ? to get the results
+import SearchResults from "./SearchResults";
 
 const SearchBar = () => {
     const [tracklist, setTracklist] = useState(null);
@@ -15,7 +13,7 @@ const SearchBar = () => {
         </form>
         <div className="tracklist">
             {tracklist === "tracklist" &&
-                <Tracklist />
+                <SearchResults />
             }
         </div>
       </>

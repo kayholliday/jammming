@@ -1,6 +1,6 @@
 import React from "react";
 
-//child component of Tracklist
+//child component of SearchResults
 
 function Playlist({tracks, setTracks, updateStatus}) {
     return (
@@ -11,7 +11,7 @@ function Playlist({tracks, setTracks, updateStatus}) {
                     tracks && tracks.map(track => {
                         if(track && track.status==='Playlist')
                         return<>
-                            <p className="track" key={track.id}>{track.artist} {track.songTitle} {track.album}<button className="removeFromPlaylist" key={track.id} onClick={()=>{updateStatus(track.id, 'SearchResult')}}>Remove from Playlist</button></p></>
+                            <p className="track" key={track.id}>{track.artist} {track.name} {track.album}<button className="removeFromPlaylist" key={track.id} onClick={()=>{updateStatus(track.id, 'SearchResult')}}>-</button></p></>
           })
         }
             </div>

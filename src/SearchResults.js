@@ -1,22 +1,39 @@
-import React from "react";
+import React, {useState} from "react";
+import Tracklist from "./Tracklist";
+import Playlist from "./Playlist";
+import Track from "./Track";
 
-//child component of Tracklist
-//take input from SearchBar and use it to return Tracklists
+//parent component of Tracklist and Playlist
 
-const SearchResults = ({tracks, setTracks, updateStatus}) => {
-  
-  return (
-    <div className="searchresults">
-      <h3>Search Results</h3>
-        {
-          tracks && tracks.map(track => {
-            if(track && track.status==='SearchResult')
-              return<>
-                <p className="track" key={track.id}>{track.artist} {track.songTitle} {track.album}<button className="addToPlaylist" key={track.id} onClick={()=>{updateStatus(track.id, 'Playlist')}}>Add to Playlist</button></p></>
-          })
-        }
-    </div>
-  )
+const SearchResults = () => {
+    const [tracks, setTracks] = useState([{
+        id:'',
+        name: '',
+        artist: '',
+        album: '',
+        status: 'SearchResult'
+    }]);
+    
+    //Maps through the tracks and finds the matching id 
+    //It then changes the status of that track which moves the component from SearchResults to Playlist and visa versa
+    const updateStatus = (id, newStatus) => {
+        let allTracks=tracks;
+        allTracks=allTracks.map(track => {
+            if(track.id===id){
+                track.status=newStatus;
+            }
+        return track;
+        })
+        setTracks(allTracks)
+    }
+    
+    return ( 
+        <div className="searchresults">
+            <h3>Results</h3>
+            <Tracklist tracks={tracks} setTracks={setTracks} updateStatus={updateStatus} />
+            <Playlist tracks={tracks} setTracks={setTracks} updateStatus={updateStatus} />
+        </div>
+     );
 }
  
 export default SearchResults;

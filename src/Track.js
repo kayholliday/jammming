@@ -1,33 +1,32 @@
-import React, { useState } from "react";
-import SearchResults from "./SearchResults";
+import React from "react";
 
-//track return here get imported to Tracklist
-//need to get the addTrack functionimported fro SearchBar
+//child component of Tracklist
+//tracks from here appear in Tracklist
 
-let nextId = 0;
-export function generateId () {
-    const result = nextId;
-    nextId +=1;
-    return result;
-};
+const tracks = [
+  {
+    id: 1,
+    artist: 'Bon Jovi',
+    name: 'Living on a Prayer',
+    album: 'Slippery When Wet',
+    status: 'SearchResult'
+  },
+  {
+    id: 2,
+    artist: 'Bryan Adams',
+    name: 'Run to You',
+    album: 'Reckless',
+    status: 'SearchResult'
+  }
+];
 
-const Track = (props) => {
-    const {track, addTrack} = props;
-    const tracks = ['artist: Bon Jovi ', 'songTitle: Living on a Prayer ', 'album: Slippery When Wet ']
-
-          /*artist: 'Bryan Adams',
-          songTitle: 'Run to You',
-          album: 'Reckless'*/
-    const handleAddClick = () => {
-        addTrack(track);
-    };
-    return ( 
-        <li className="track">
-            <button className="addtrack" onClick={handleAddClick}>Add</button>
-            <div className="tracks">{tracks}</div>
-        </li>
-        
-     );
+const Track = () => {
+    const arrayTracks = tracks.map((track) => <li>{track}</li>)
+    return (
+        <div className="track">
+            <ul>{arrayTracks}</ul>
+        </div>
+    );
 }
  
 export default Track;
