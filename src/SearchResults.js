@@ -6,13 +6,15 @@ import Track from "./Track";
 //parent component of Tracklist and Playlist
 
 const SearchResults = () => {
-    const [tracks, setTracks] = useState([{
-        id:'',
-        name: '',
-        artist: '',
-        album: '',
-        status: 'SearchResult'
-    }]);
+    const [tracks, setTracks] = useState(
+        [{
+            id: '1',
+            name: 'Livin on a prayer',
+            artist: 'Jon Bon Jovi',
+            album: 'Slippery When Wet',
+            status: 'SearchResult'
+        }]
+    );
     
     //Maps through the tracks and finds the matching id 
     //It then changes the status of that track which moves the component from SearchResults to Playlist and visa versa
