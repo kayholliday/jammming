@@ -7,10 +7,7 @@ import Tracklist from './SearchResults';
 //Check out App and AddThought for how to add track to playlist
 
 function App() {
-  const handleSave = () => {
-    console.log('Saved to Spotify');
-  }
-//change the <Track /> to <SearchResults />
+
   return (
     <>
       <div className='App'>
@@ -19,9 +16,6 @@ function App() {
           <SearchBar />
         </div>
       </div>
-    <div>
-      <button id='save' onClick={handleSave}>Save to Spotify</button>
-    </div>
   </>
   );
 }

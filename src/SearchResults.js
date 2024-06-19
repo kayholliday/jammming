@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import Tracklist from "./Tracklist";
 import Playlist from "./Playlist";
-import Track from "./Track";
 
 //parent component of Tracklist and Playlist
 
@@ -12,8 +11,18 @@ const SearchResults = () => {
             name: 'Livin on a prayer',
             artist: 'Jon Bon Jovi',
             album: 'Slippery When Wet',
+            uri: "spotify:album:2up3OPMp9Tb4dAKM2erWXQ",
             status: 'SearchResult'
-        }]
+        },
+        {
+            id: '2',
+            name: 'Run to you',
+            artist: 'Bryan Adams',
+            album: 'Reckless',
+            uri: "spotify:album:2up3OPMp9Tb4dAKM2erWXQ",
+            status: 'SearchResult'
+        }
+        ]
     );
     
     //Maps through the tracks and finds the matching id 
